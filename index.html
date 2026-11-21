@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King of Tires — Шиномонтаж и покраска дисков в Ждановичах</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="./images/logo.jpeg">
+  <link rel="apple-touch-icon" href="./logo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ШАПКА + ПЕРВЫЙ ЭКРАН -->
+  <div class="hero-wrapper">
+    <div class="hero-bg"></div>
+
+    <header class="header">
+      <div class="container header-inner">
+        <a href="#" class="logo">KING <span>OF</span> TIRES</a>
+
+        <nav class="nav">
+          <a href="#calculator">Калькулятор</a>
+          <a href="#services">Услуги</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contacts">Как добраться</a>
+        </nav>
+        <div class="header-right">
+          <div class="header-hours">
+            <span>Пн–Ср: 10:00–21:00</span>
+            <span>Сб: 10:00–20:00</span>
+          </div>
+          <a href="tel:+375290000000" class="header-phone">+375 (29) 000-00-00</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container hero-content">
+      <div class="badge-status">
+        <span class="status-dot" id="status-dot"></span>
+        аг. Ждановичи, ул. Садовая, 14 • По записи и без очереди
+      </div>
+
+      <h1 class="hero-title">Шиномонтаж и ремонт дисков <span>King of Tires</span></h1>
+      <p class="hero-subtitle">
+        Сезонная переобувка R13–R22, правка и полимерная покраска дисков, заправка автокондиционеров и эвакуатор в Ждановичах и Минске.
+      </p>
+
+      <!-- Автоскрытие после 1 декабря -->
+      <div id="winter-promo" class="promo-timer" style="display: none;">
+        <div class="promo-label">До обязательной зимней переобувки (1 декабря):</div>
+        <div class="timer-grid">
+          <div class="timer-item">
+            <span class="timer-num" id="t-days">00</span>
+            <span class="timer-unit">дней</span>
+          </div>
+          <div class="timer-item">
+            <span class="timer-num" id="t-hours">00</span>
+            <span class="timer-unit">часов</span>
+          </div>
+          <div class="timer-item">
+            <span class="timer-num" id="t-mins">00</span>
+            <span class="timer-unit">минут</span>
+          </div>
+          <div class="timer-item">
+            <span class="timer-num" id="t-secs">00</span>
+            <span class="timer-unit">секунд</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="tel:+375290000000" class="btn btn-primary">Позвонить и записаться</a>
+        <a href="https://yandex.by/maps/org/39624664551/" target="_blank" rel="noopener" class="btn btn-outline">
+          Открыть в Яндекс.Картах
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ПОЛОСА ФАКТОВ -->
+  <section class="facts-section">
+    <div class="container facts-grid">
+      <div class="fact-card">
+        <h3>R13 – R22 и низкий профиль</h3>
+        <p>Работаем с резиной 45-го профиля и ниже, подбираем проставочные кольца на ступицу.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Полное восстановление дисков</h3>
+        <p>Правка геометрии, пескоструй, полимерная покраска и алмазная проточка в одном месте.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Все расходники включены</h3>
+        <p>Грузики и стандартные вентили уже заложены в стоимость комплекса за 4 колеса.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Рейтинг 5.0 на Яндекс.Картах</h3>
+        <p>Более 47 реальных отзывов от водителей Минска и Ждановичей.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР -->
+  <section id="calculator">
+    <div class="container">
+      <h2 class="section-title">Калькулятор шиномонтажа</h2>
+      <p class="section-desc">Выберите вид работ и диаметр колёс — цена рассчитается за полный комплект из 4 штук.</p>
+
+      <div class="calc-box">
+        <div>
+          <div class="calc-group">
+            <span class="calc-label">1. Вид работ</span>
+            <div class="tab-row" id="mode-tabs">
+              <button class="tab-btn active" data-mode="full">Полная переобувка (4 колеса)</button>
+              <button class="tab-btn" data-mode="balance">Комплекс балансировки (4 колеса)</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <span class="calc-label">2. Диаметр дисков</span>
+            <div class="tab-row" id="radius-tabs">
+              <button class="tab-btn" data-radius="r13_14">R13–14</button>
+              <button class="tab-btn active" data-radius="r15_16">R15–16</button>
+              <button class="tab-btn" data-radius="r17">R17</button>
+              <button class="tab-btn" data-radius="r18">R18</button>
+              <button class="tab-btn" data-radius="r19">R19</button>
+              <button class="tab-btn" data-radius="r20">R20</button>
+              <button class="tab-btn" data-radius="r21">R21</button>
+              <button class="tab-btn" data-radius="r22">R22</button>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <label class="profile-check disabled" id="low-profile-label">
+              <input type="checkbox" id="low-profile-cb" disabled>
+              <span class="profile-check-text">
+                Низкий профиль (45 и ниже) <strong>+30%</strong>
+                <span class="profile-check-note" id="low-profile-note">Доступно для полной переобувки R17–R22</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <div class="result-caption" id="result-caption">Комплекс переобувки за 4 колеса:</div>
+          <div class="price-total" id="total-price">70 BYN</div>
+          <ul class="included-list" id="included-list">
+            <li>Снятие и установка 4 колёс</li>
+            <li>Демонтаж и монтаж шин</li>
+            <li>Балансировка + грузики</li>
+            <li>Все расходники (кроме металлических вентилей)</li>
+          </ul>
+          <a href="tel:+375290000000" class="btn btn-primary" style="width: 100%;">Записаться по этой цене</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДОП. УСЛУГИ -->
+  <section id="services" style="padding-top: 10px;">
+    <div class="container">
+      <h2 class="section-title">Диски, кондиционер и эвакуатор</h2>
+      <p class="section-desc">Полный спектр работ по восстановлению колёс и технической помощи на дороге.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Ремонт дисков</span>
+            <h3>Правка литых дисков</h3>
+            <p>Восстановление геометрии после ударов и ям. Точная стоимость зависит от сложности повреждения.</p>
+          </div>
+          <div class="service-price">от 40 BYN / 1 шт.</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Литые диски</span>
+            <h3>Полимерная покраска литых дисков</h3>
+            <p>Полная подготовка и стойкое полимерное покрытие комплекта из 4 литых дисков.</p>
+          </div>
+          <div class="service-price">от 500 BYN / 4 шт.</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Железо</span>
+            <h3>Полимерная покраска штампованных дисков</h3>
+            <p>Полный комплекс с пескоструйной очисткой, химией и покраской. Ржавые диски как новые.</p>
+          </div>
+          <div class="service-price">от 300 BYN / 4 шт.</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Диски</span>
+            <h3>Алмазная проточка</h3>
+            <p>Восстановление заводской лицевой шлифовки дисков. Зависит от параметров и разноширокости.</p>
+          </div>
+          <div class="service-price">от 450 BYN / 4 шт.</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Кондиционер</span>
+            <h3>Заправка автокондиционера</h3>
+            <p>Заправка системы фреоном с добавлением нового компрессорного масла.</p>
+          </div>
+          <div class="service-price">30 BYN / 100 г</div>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <span class="service-tag">Помощь на дороге</span>
+            <h3>Легковой эвакуатор</h3>
+            <p>Оперативная подача по городу и за город. За пределами города — 3 BYN за километр.</p>
+          </div>
+          <div class="service-price">от 120 BYN</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КЛИКАБЕЛЬНЫЕ ОТЗЫВЫ С ЯНДЕКС.КАРТ -->
+  <section id="reviews" class="section-dark">
+    <div class="container">
+      <div class="reviews-header">
+        <div>
+          <h2 class="section-title">Отзывы клиентов</h2>
+          <p class="section-desc" style="margin-bottom: 0;">Нажмите на любую карточку, чтобы открыть оригинал отзыва на Яндекс.Картах.</p>
+        </div>
+
+        <a href="https://yandex.by/maps/org/39624664551/reviews/" target="_blank" rel="noopener" class="yandex-badge">
+          <span class="yandex-score">★ 5.0</span>
+          <span style="font-size: 0.88rem; line-height: 1.3;">
+            47+ оценок на Яндекс.Картах<br>
+            <span style="opacity: 0.7; text-decoration: underline;">Смотреть все отзывы →</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="reviews-grid">
+        <a href="https://yandex.by/maps/org/39624664551/reviews?reviews%5BpublicId%5D=ehugq8zpukn2nyn1be0b4pak9g&utm_source=review" target="_blank" rel="noopener" class="review-card">
+          <div>
+            <div class="review-top">
+              <div>
+                <div class="review-author">_N1trogeN_</div>
+                <span class="review-level">Знаток города 5 уровня</span>
+              </div>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">
+              «Отдавал диски в покраску и делал шиномонтаж у Артёма. Результат не то, что удивил, он шокировал! Внимание к деталям и пожелания клиента на первом месте. Шиномонтаж выполнил качественно, подобрал проставочные колечки на ступицу.»
+            </p>
+          </div>
+          <div class="review-footer">
+            <span class="review-date">3 сентября</span>
+            <span class="review-link-label">Открыть в Яндекс ↗</span>
+          </div>
+        </a>
+
+        <a href="https://yandex.by/maps/org/39624664551/reviews?reviews%5BpublicId%5D=nww8v93vq6eq6a67vb4k5k2268&utm_source=review" target="_blank" rel="noopener" class="review-card">
+          <div>
+            <div class="review-top">
+              <div>
+                <div class="review-author">Алексей</div>
+                <span class="review-level">Знаток города 6 уровня</span>
+              </div>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">
+              «Попал в неприятную историю в виде пробитого колеса в районе Ждановичей! Поставил докатку, нашёл ближайший шиномонтаж, сделали ремонт колеса очень оперативно, как говорится "без шума и пыли", несмотря на занятость по записи!»
+            </p>
+          </div>
+          <div class="review-footer">
+            <span class="review-date">6 ноября</span>
+            <span class="review-link-label">Открыть в Яндекс ↗</span>
+          </div>
+        </a>
+
+        <a href="https://yandex.by/maps/org/39624664551/reviews?reviews%5BpublicId%5D=4y9hf1ncg4b53w8b9nx9r22ujm&utm_source=review" target="_blank" rel="noopener" class="review-card">
+          <div>
+            <div class="review-top">
+              <div>
+                <div class="review-author">Александр Д.</div>
+                <span class="review-level">Знаток города 5 уровня</span>
+              </div>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">
+              «Обращаюсь к ребятам уже не первый раз, правил у них два комплекта дисков, сделали всё отлично! Оставил машину для сезонной смены колёс, пришёл забирать и был приятно удивлён! Мои ржавые штампованные диски теперь выглядят как новые!»
+            </p>
+          </div>
+          <div class="review-footer">
+            <span class="review-date">16 октября</span>
+            <span class="review-link-label">Открыть в Яндекс ↗</span>
+          </div>
+        </a>
+
+        <a href="https://yandex.by/maps/org/39624664551/reviews?reviews%5BpublicId%5D=yguazuzy4xx2dj4wmnpg3hrmj0&utm_source=review" target="_blank" rel="noopener" class="review-card">
+          <div>
+            <div class="review-top">
+              <div>
+                <div class="review-author">Вячеслав</div>
+                <span class="review-level">Знаток города 5 уровня</span>
+              </div>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">
+              «Профи своего дела, сделал быстро и качественно, удобно, что можно в одном месте и шины приобрести и сразу установить по записи (без очередей), рекомендую!»
+            </p>
+          </div>
+          <div class="review-footer">
+            <span class="review-date">4 ноября</span>
+            <span class="review-link-label">Открыть в Яндекс ↗</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАРТА И АДРЕС -->
+  <section id="contacts">
+    <div class="container">
+      <h2 class="section-title">Где мы находимся</h2>
+      <p class="section-desc">Минский район, аг. Ждановичи — удобный подъезд со стороны МКАД и пр-та Победителей.</p>
+
+      <div class="location-grid">
+        <div class="address-card">
+          <div>
+            <div class="info-block">
+              <strong>Адрес</strong>
+              <p>Минский район, аг. Ждановичи, ул. Садовая, 14</p>
+            </div>
+            <div class="info-block">
+              <strong>Услуги на точке</strong>
+              <p>Шиномонтаж R13–R22, правка и покраска дисков, заправка кондиционера, эвакуатор.</p>
+            </div>
+            <div class="info-block">
+              <strong>Режим работы</strong>
+              <p>ПН-СР 10:00 21:00, CБ 10:00–20:00 <br> ЧТ, ПТ, ВС выходные</p>
+            </div>
+            <div class="info-block" style="margin-bottom: 0;">
+              <strong>Телефон</strong>
+              <p><a href="tel:+375290000000" style="font-weight: 700; font-size: 1.15rem;">+375 (29) 000-00-00</a></p>
+            </div>
+          </div>
+
+          <a href="https://yandex.by/maps/org/39624664551/" target="_blank" rel="noopener" class="btn btn-primary">
+            Маршрут в Яндекс.Картах
+          </a>
+        </div>
+
+        <div class="map-wrapper" id="map-wrapper">
+          <iframe src="https://yandex.by/map-widget/v1/?ll=27.424650%2C53.944240&z=16&pt=27.424650,53.944240,pm2rdm" allowfullscreen></iframe>
+        <div class="map-hint">Нажмите на карту, чтобы двигать</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#" class="logo" style="margin-bottom: 8px;">KING <span>OF</span> TIRES</a>
+          <p style="font-size: 0.9rem; opacity: 0.7;">аг. Ждановичи, ул. Садовая, 14</p>
+        </div>
+
+        <div class="social-links">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-btn">Instagram</a>
+          <a href="https://yandex.by/maps/org/39624664551/" target="_blank" rel="noopener" class="social-btn">Яндекс.Карты</a>
+          <a href="https://t.me/" target="_blank" rel="noopener" class="social-btn">Telegram</a>
+          <a href="tel:+375290000000" class="social-btn-tel" >
+            +375 (29) 000-00-00
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 King of Tires • Шиномонтаж в Ждановичах</span>
+        <span>Цены носят справочный характер</span>
+      </div>
+    </div>
+  </footer>
+  <script src="./code.js"></script>
+</body>
+</html>
