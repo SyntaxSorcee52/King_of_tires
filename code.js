@@ -13,7 +13,7 @@
     const now = new Date();
     const year = now.getFullYear();
     const startDate = new Date(year, 9, 1, 0, 0, 0); // 1 октября
-    const endDate = new Date(year, 10, 21, 0, 0, 0);  // 1 декабря
+    const endDate = new Date(year, 11, 1, 0, 0, 0);  // 1 декабря
 
     if (now < startDate || now >= endDate) {
       promo.style.display = 'none';
