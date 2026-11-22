@@ -817,13 +817,13 @@
 
   .logo {
     order: 1;
-    font-size: clamp(1.12rem, 3.8vw, 1.35rem);
+    font-size: clamp(1.12rem, 4.6vw, 1.35rem);
     white-space: nowrap;
   }
 
   .header-phone {
     order: 2;
-    font-size: clamp(0.82rem, 2.6vw, 0.95rem);
+    font-size: clamp(0.82rem, 3.4vw, 0.95rem);
     padding: 8px 10px;
     white-space: nowrap;
   }
