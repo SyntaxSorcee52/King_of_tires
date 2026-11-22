@@ -790,35 +790,44 @@
     }
 
     /* === АДАПТИВ === */
-    @media (max-width: 900px) {
-      .nav { display: none; }
-      .calc-box { grid-template-columns: 1fr; padding: 24px; }
-      .location-grid { grid-template-columns: 1fr; }
-      header,
-  .header-inner {
-    flex-wrap: wrap;
-    row-gap: 10px;
-  }
-
-  nav {
+/* === АДАПТИВ === */
+@media (max-width: 900px) {
+  .nav {
     display: none;
   }
 
-  /* Растворяем обёртку, чтобы лого, кнопка и график сами встали по рядам */
+  .calc-box {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+
   .header-right {
     display: contents;
   }
 
   .logo {
     order: 1;
+    font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+    white-space: nowrap;
   }
 
   .header-phone {
     order: 2;
-    padding: 8px 12px;
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 2.6vw, 0.95rem);
+    padding: 8px 10px;
+    white-space: nowrap;
   }
-  /* График переносится на вторую строку на всю ширину шапки */
+
   .header-hours {
     order: 3;
     display: flex;
@@ -829,12 +838,21 @@
     width: 100%;
     padding-top: 8px;
     border-top: 1px solid rgba(254, 238, 225, 0.12);
-    font-size: 0.76rem;
+    font-size: 0.78rem;
   }
-    }
+}
 
-    @media (max-width: 540px) {
-      .header-phone { font-size: 0.9rem; padding: 8px 12px; }
-      .hero-actions .btn { width: 100%; }
-      .price-total { font-size: 2.4rem; }
-    }
+@media (max-width: 540px) {
+  .hero-content {
+    padding-top: 36px;
+    padding-bottom: 48px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .price-total {
+    font-size: 2.4rem;
+  }
+}
