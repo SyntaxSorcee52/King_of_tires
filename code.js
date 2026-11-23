@@ -177,3 +177,54 @@
 
   dot.classList.toggle('is-closed', !isOpen);
 })();
+// === СЛАЙДЕР ПРИМЕРОВ РАБОТ (С АВТОПРОКРУТКОЙ) ===
+const worksTrack = document.getElementById('worksTrack');
+const worksPrev = document.getElementById('worksPrev');
+const worksNext = document.getElementById('worksNext');
+
+if (worksTrack && worksPrev && worksNext) {
+  let autoSlideTimer;
+
+  const getStep = () => {
+    const firstSlide = worksTrack.querySelector('.work-slide');
+    return firstSlide ? firstSlide.offsetWidth + 18 : 320;
+  };
+
+  const slideNext = () => {
+    const isAtEnd = worksTrack.scrollLeft + worksTrack.clientWidth >= worksTrack.scrollWidth - 10;
+    if (isAtEnd) {
+      worksTrack.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      worksTrack.scrollBy({ left: getStep(), behavior: 'smooth' });
+    }
+  };
+
+  const startAutoSlide = () => {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(slideNext, 3500);
+  };
+
+  const stopAutoSlide = () => clearInterval(autoSlideTimer);
+
+  worksNext.addEventListener('click', () => {
+    slideNext();
+    startAutoSlide();
+  });
+
+  worksPrev.addEventListener('click', () => {
+    if (worksTrack.scrollLeft <= 10) {
+      worksTrack.scrollTo({ left: worksTrack.scrollWidth, behavior: 'smooth' });
+    } else {
+      worksTrack.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    }
+    startAutoSlide();
+  });
+
+  // Пауза при наведении мыши или касании на телефоне
+  worksTrack.addEventListener('mouseenter', stopAutoSlide);
+  worksTrack.addEventListener('mouseleave', startAutoSlide);
+  worksTrack.addEventListener('touchstart', stopAutoSlide, { passive: true });
+  worksTrack.addEventListener('touchend', startAutoSlide);
+
+  startAutoSlide();
+}

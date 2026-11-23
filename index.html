@@ -223,48 +223,62 @@
     </div>
   </section>
   <!-- ПРИМЕРЫ РАБОТ -->
-  <section id="works" style="padding-top: 10px;">
+  <section id="works" style="padding-top: 20px;">
     <div class="container">
       <div class="works-header">
         <div>
           <h2 class="section-title">Примеры наших работ</h2>
-          <p class="section-desc" style="margin-bottom: 0;">Реальные фото до и после восстановления, полимерной покраски и правки дисков.</p>
+          <p class="section-desc" style="margin-bottom: 0;">Полимерная покраска, алмазная проточка и восстановление дисков.</p>
         </div>
-        <a href="https://t.me/ссылка_на_его_тг" target="_blank" rel="noopener" class="btn btn-dark">
-          Больше работ в Telegram →
-        </a>
+
+        <div class="works-controls">
+          <div class="slider-arrows">
+            <button type="button" class="slider-btn" id="worksPrev" aria-label="Назад">←</button>
+            <button type="button" class="slider-btn" id="worksNext" aria-label="Вперёд">→</button>
+          </div>
+          <a href="https://t.me/ссылка_на_его_тг" target="_blank" rel="noopener" class="btn btn-dark">
+            БОЛЬШЕ РАБОТ В TELEGRAM →
+          </a>
+        </div>
       </div>
 
-      <div class="works-grid">
-        <div class="work-card">
-          <img src="./images/work-1.jpg" alt="Полимерная покраска литых дисков" loading="lazy">
-          <div class="work-caption">
-            <span class="service-tag">Полимерная покраска</span>
-            <p>Комплект литых дисков R18 • Пескоструй + графит мат</p>
+      <div class="works-track" id="worksTrack">
+        <div class="work-slide">
+          <img src="./images/diski_1.jpg" alt="Полимерная покраска литых дисков" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-pill">Полимерная покраска</span>
+            <h3>Литые диски R18 • Пескоструй + графит мат</h3>
           </div>
         </div>
 
-        <div class="work-card">
-          <img src="./images/work-2.jpg" alt="Восстановление штампованных дисков" loading="lazy">
-          <div class="work-caption">
-            <span class="service-tag">Покраска штампов</span>
-            <p>Полная очистка от ржавчины и полимерное покрытие R15</p>
+        <div class="work-slide">
+          <img src="./images/disk_2.jpg" alt="Полимерная покраска литых дисков" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-pill">Покраска </span>
+            <h3>Полная очистка и полимерное покрытие R15</h3>
           </div>
         </div>
 
-        <div class="work-card">
-          <img src="./images/work-3.jpg" alt="Алмазная проточка дисков" loading="lazy">
-          <div class="work-caption">
-            <span class="service-tag">Алмазная проточка</span>
-            <p>Восстановление заводской шлифовки под лак</p>
+        <div class="work-slide">
+          <img src="./images/disk_3.jpg" alt="Алмазная проточка дисков" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-pill">Полимерная покраска</span>
+            <h3>Заводская шлифовка под лак</h3>
           </div>
         </div>
 
-        <div class="work-card">
-          <img src="./images/work-4.jpg" alt="Правка геометрии диска" loading="lazy">
-          <div class="work-caption">
-            <span class="service-tag">Правка и шиномонтаж</span>
-            <p>Устранение биения и балансировка низкого профиля</p>
+        <div class="work-slide">
+          <img src="./images/disk_4.jpg" alt="Полимерная покраска литых дисков" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-pill">Полимерная покраска</span>
+            <h3>Устранение биения и балансировка</h3>
+          </div>
+        </div>
+        <div class="work-slide">
+          <img src="./images/disk_5.jpg" alt="Полимерная покраска литых дисков" loading="lazy">
+          <div class="work-slide-overlay">
+            <span class="work-pill">Полимерная покраска</span>
+            <h3>Устранение биения и балансировка</h3>
           </div>
         </div>
       </div>
